@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB1C96D42882B92700B90D31 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DB1C96D32882B92700B90D31 /* Realm */; };
+		DB1C96D62882B92700B90D31 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB1C96D52882B92700B90D31 /* RealmSwift */; };
+		DB9B3C2A28812FC700A2D063 /* iTunesMiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C2928812FC700A2D063 /* iTunesMiniApp.swift */; };
+		DB9B3C2E28812FC800A2D063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B3C2D28812FC800A2D063 /* Assets.xcassets */; };
+		DB9B3C3128812FC800A2D063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B3C3028812FC800A2D063 /* Preview Assets.xcassets */; };
+		DB9B3C412881303A00A2D063 /* TracksAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C402881303A00A2D063 /* TracksAPIManager.swift */; };
+		DB9B3C4C28815DBD00A2D063 /* TrackListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C4B28815DBD00A2D063 /* TrackListViewModel.swift */; };
+		DB9B3C4F28815E9C00A2D063 /* SearchTracksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C4E28815E9C00A2D063 /* SearchTracksListView.swift */; };
+		DB9B3C5128815F6900A2D063 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5028815F6900A2D063 /* TrackViewModel.swift */; };
+		DB9B3C5328816C4600A2D063 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5228816C4600A2D063 /* TrackCell.swift */; };
+		DB9B3C552881838A00A2D063 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C542881838A00A2D063 /* TrackDetailView.swift */; };
+		DB9B3C5728818AE100A2D063 /* TrackThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5628818AE100A2D063 /* TrackThumbnailView.swift */; };
+		DB9B3C5928818B8300A2D063 /* TrackKeyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5828818B8300A2D063 /* TrackKeyDetailView.swift */; };
+		DB9B3C5B2881915100A2D063 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5A2881915100A2D063 /* RootView.swift */; };
+		DB9B3C5F2881985B00A2D063 /* TracksDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5E2881985B00A2D063 /* TracksDBManager.swift */; };
+		DB9B3C612881A66300A2D063 /* FetchedTracksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C602881A66300A2D063 /* FetchedTracksResponse.swift */; };
+		DB9B3C652881B60D00A2D063 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C642881B60D00A2D063 /* Track.swift */; };
+		DBB35A4728827EBE00E0983B /* TracksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB35A4628827EBE00E0983B /* TracksStore.swift */; };
+		DBF3AD9D28828F64008E249A /* FavoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3AD9C28828F64008E249A /* FavoritesListView.swift */; };
+		DBF3AD9F28828FA9008E249A /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3AD9E28828FA9008E249A /* FavoritesListViewModel.swift */; };
+		DBF3ADA12882931F008E249A /* TrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3ADA02882931F008E249A /* TrackListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DB9B3C2628812FC700A2D063 /* iTunesMini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesMini.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9B3C2928812FC700A2D063 /* iTunesMiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesMiniApp.swift; sourceTree = "<group>"; };
+		DB9B3C2D28812FC800A2D063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB9B3C3028812FC800A2D063 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB9B3C402881303A00A2D063 /* TracksAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksAPIManager.swift; sourceTree = "<group>"; };
+		DB9B3C4B28815DBD00A2D063 /* TrackListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewModel.swift; sourceTree = "<group>"; };
+		DB9B3C4E28815E9C00A2D063 /* SearchTracksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTracksListView.swift; sourceTree = "<group>"; };
+		DB9B3C5028815F6900A2D063 /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
+		DB9B3C5228816C4600A2D063 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		DB9B3C542881838A00A2D063 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
+		DB9B3C5628818AE100A2D063 /* TrackThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackThumbnailView.swift; sourceTree = "<group>"; };
+		DB9B3C5828818B8300A2D063 /* TrackKeyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackKeyDetailView.swift; sourceTree = "<group>"; };
+		DB9B3C5A2881915100A2D063 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		DB9B3C5E2881985B00A2D063 /* TracksDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksDBManager.swift; sourceTree = "<group>"; };
+		DB9B3C602881A66300A2D063 /* FetchedTracksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedTracksResponse.swift; sourceTree = "<group>"; };
+		DB9B3C642881B60D00A2D063 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		DBB35A4628827EBE00E0983B /* TracksStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksStore.swift; sourceTree = "<group>"; };
+		DBF3AD9C28828F64008E249A /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
+		DBF3AD9E28828FA9008E249A /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
+		DBF3ADA02882931F008E249A /* TrackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB9B3C2328812FC700A2D063 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB1C96D62882B92700B90D31 /* RealmSwift in Frameworks */,
+				DB1C96D42882B92700B90D31 /* Realm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB9B3C1D28812FC700A2D063 = {
+			isa = PBXGroup;
+			children = (
+				DB9B3C2828812FC700A2D063 /* iTunesMini */,
+				DB9B3C2728812FC700A2D063 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB9B3C2728812FC700A2D063 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B3C2628812FC700A2D063 /* iTunesMini.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB9B3C2828812FC700A2D063 /* iTunesMini */ = {
+			isa = PBXGroup;
+			children = (
+				DBB35A4528827EAF00E0983B /* Stores */,
+				DB9B3C4D28815E9200A2D063 /* Views */,
+				DB9B3C4A28815DAE00A2D063 /* View Models */,
+				DB9B3C3F2881302B00A2D063 /* Managers */,
+				DB9B3C3C28812FF400A2D063 /* Models */,
+				DB9B3C2928812FC700A2D063 /* iTunesMiniApp.swift */,
+				DB9B3C2D28812FC800A2D063 /* Assets.xcassets */,
+				DB9B3C2F28812FC800A2D063 /* Preview Content */,
+			);
+			path = iTunesMini;
+			sourceTree = "<group>";
+		};
+		DB9B3C2F28812FC800A2D063 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B3C3028812FC800A2D063 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DB9B3C3C28812FF400A2D063 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B3C602881A66300A2D063 /* FetchedTracksResponse.swift */,
+				DB9B3C642881B60D00A2D063 /* Track.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB9B3C3F2881302B00A2D063 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B3C402881303A00A2D063 /* TracksAPIManager.swift */,
+				DB9B3C5E2881985B00A2D063 /* TracksDBManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		DB9B3C4A28815DAE00A2D063 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B3C4B28815DBD00A2D063 /* TrackListViewModel.swift */,
+				DB9B3C5028815F6900A2D063 /* TrackViewModel.swift */,
+				DBF3AD9E28828FA9008E249A /* FavoritesListViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		DB9B3C4D28815E9200A2D063 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB9B3C4E28815E9C00A2D063 /* SearchTracksListView.swift */,
+				DB9B3C5228816C4600A2D063 /* TrackCell.swift */,
+				DB9B3C542881838A00A2D063 /* TrackDetailView.swift */,
+				DB9B3C5628818AE100A2D063 /* TrackThumbnailView.swift */,
+				DB9B3C5828818B8300A2D063 /* TrackKeyDetailView.swift */,
+				DB9B3C5A2881915100A2D063 /* RootView.swift */,
+				DBF3AD9C28828F64008E249A /* FavoritesListView.swift */,
+				DBF3ADA02882931F008E249A /* TrackListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBB35A4528827EAF00E0983B /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				DBB35A4628827EBE00E0983B /* TracksStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB9B3C2528812FC700A2D063 /* iTunesMini */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB9B3C3928812FC800A2D063 /* Build configuration list for PBXNativeTarget "iTunesMini" */;
+			buildPhases = (
+				DB9B3C2228812FC700A2D063 /* Sources */,
+				DB9B3C2328812FC700A2D063 /* Frameworks */,
+				DB9B3C2428812FC700A2D063 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iTunesMini;
+			packageProductDependencies = (
+				DB1C96D32882B92700B90D31 /* Realm */,
+				DB1C96D52882B92700B90D31 /* RealmSwift */,
+			);
+			productName = iTunesMini;
+			productReference = DB9B3C2628812FC700A2D063 /* iTunesMini.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB9B3C1E28812FC700A2D063 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					DB9B3C2528812FC700A2D063 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = DB9B3C2128812FC700A2D063 /* Build configuration list for PBXProject "iTunesMini" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB9B3C1D28812FC700A2D063;
+			packageReferences = (
+				DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+			);
+			productRefGroup = DB9B3C2728812FC700A2D063 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB9B3C2528812FC700A2D063 /* iTunesMini */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB9B3C2428812FC700A2D063 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9B3C3128812FC800A2D063 /* Preview Assets.xcassets in Resources */,
+				DB9B3C2E28812FC800A2D063 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB9B3C2228812FC700A2D063 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9B3C4C28815DBD00A2D063 /* TrackListViewModel.swift in Sources */,
+				DB9B3C412881303A00A2D063 /* TracksAPIManager.swift in Sources */,
+				DBF3AD9F28828FA9008E249A /* FavoritesListViewModel.swift in Sources */,
+				DB9B3C5728818AE100A2D063 /* TrackThumbnailView.swift in Sources */,
+				DB9B3C5928818B8300A2D063 /* TrackKeyDetailView.swift in Sources */,
+				DB9B3C5328816C4600A2D063 /* TrackCell.swift in Sources */,
+				DBF3AD9D28828F64008E249A /* FavoritesListView.swift in Sources */,
+				DB9B3C5F2881985B00A2D063 /* TracksDBManager.swift in Sources */,
+				DBF3ADA12882931F008E249A /* TrackListView.swift in Sources */,
+				DB9B3C612881A66300A2D063 /* FetchedTracksResponse.swift in Sources */,
+				DB9B3C5128815F6900A2D063 /* TrackViewModel.swift in Sources */,
+				DB9B3C552881838A00A2D063 /* TrackDetailView.swift in Sources */,
+				DBB35A4728827EBE00E0983B /* TracksStore.swift in Sources */,
+				DB9B3C652881B60D00A2D063 /* Track.swift in Sources */,
+				DB9B3C4F28815E9C00A2D063 /* SearchTracksListView.swift in Sources */,
+				DB9B3C5B2881915100A2D063 /* RootView.swift in Sources */,
+				DB9B3C2A28812FC700A2D063 /* iTunesMiniApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DB9B3C3728812FC800A2D063 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB9B3C3828812FC800A2D063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB9B3C3A28812FC800A2D063 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iTunesMini/Preview Content\"";
+				DEVELOPMENT_TEAM = RTKN496TK6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katreenabacalso.iTunesMini;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB9B3C3B28812FC800A2D063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iTunesMini/Preview Content\"";
+				DEVELOPMENT_TEAM = RTKN496TK6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katreenabacalso.iTunesMini;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB9B3C2128812FC700A2D063 /* Build configuration list for PBXProject "iTunesMini" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9B3C3728812FC800A2D063 /* Debug */,
+				DB9B3C3828812FC800A2D063 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB9B3C3928812FC800A2D063 /* Build configuration list for PBXNativeTarget "iTunesMini" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9B3C3A28812FC800A2D063 /* Debug */,
+				DB9B3C3B28812FC800A2D063 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DB1C96D32882B92700B90D31 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			productName = Realm;
+		};
+		DB1C96D52882B92700B90D31 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DB9B3C1E28812FC700A2D063 /* Project object */;
+}
