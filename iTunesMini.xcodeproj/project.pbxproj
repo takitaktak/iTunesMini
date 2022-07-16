@@ -27,7 +27,6 @@
 		DBB35A4728827EBE00E0983B /* TracksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB35A4628827EBE00E0983B /* TracksStore.swift */; };
 		DBF3AD9D28828F64008E249A /* FavoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3AD9C28828F64008E249A /* FavoritesListView.swift */; };
 		DBF3AD9F28828FA9008E249A /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3AD9E28828FA9008E249A /* FavoritesListViewModel.swift */; };
-		DBF3ADA12882931F008E249A /* TrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3ADA02882931F008E249A /* TrackListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +49,6 @@
 		DBB35A4628827EBE00E0983B /* TracksStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksStore.swift; sourceTree = "<group>"; };
 		DBF3AD9C28828F64008E249A /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
 		DBF3AD9E28828FA9008E249A /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
-		DBF3ADA02882931F008E249A /* TrackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +141,6 @@
 				DB9B3C5828818B8300A2D063 /* TrackKeyDetailView.swift */,
 				DB9B3C5A2881915100A2D063 /* RootView.swift */,
 				DBF3AD9C28828F64008E249A /* FavoritesListView.swift */,
-				DBF3ADA02882931F008E249A /* TrackListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,7 +202,7 @@
 			);
 			mainGroup = DB9B3C1D28812FC700A2D063;
 			packageReferences = (
-				DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+				DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = DB9B3C2728812FC700A2D063 /* Products */;
 			projectDirPath = "";
@@ -241,7 +238,6 @@
 				DB9B3C5328816C4600A2D063 /* TrackCell.swift in Sources */,
 				DBF3AD9D28828F64008E249A /* FavoritesListView.swift in Sources */,
 				DB9B3C5F2881985B00A2D063 /* TracksDBManager.swift in Sources */,
-				DBF3ADA12882931F008E249A /* TrackListView.swift in Sources */,
 				DB9B3C612881A66300A2D063 /* FetchedTracksResponse.swift in Sources */,
 				DB9B3C5128815F6900A2D063 /* TrackViewModel.swift in Sources */,
 				DB9B3C552881838A00A2D063 /* TrackDetailView.swift in Sources */,
@@ -454,7 +450,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
+		DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -467,12 +463,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		DB1C96D32882B92700B90D31 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
 		DB1C96D52882B92700B90D31 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = DB1C96D22882B92700B90D31 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
