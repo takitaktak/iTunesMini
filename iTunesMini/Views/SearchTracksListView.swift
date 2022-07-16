@@ -17,8 +17,14 @@ struct SearchTracksListView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(viewModel.filteredTracks, id: \.id) { trackVM in
-                        TrackCell(track: trackVM) { trackVM in
-                            viewModel.toggleFavorite(for: trackVM)
+                        NavigationLink {
+                            TrackDetailView(track: trackVM) { trackVM in
+                                viewModel.toggleFavorite(for: trackVM)
+                            }
+                        } label: {
+                            TrackCell(track: trackVM) { trackVM in
+                                viewModel.toggleFavorite(for: trackVM)
+                            }
                         }
                     }
                 }.padding(10)

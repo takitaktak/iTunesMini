@@ -19,7 +19,6 @@
 		DB9B3C5328816C4600A2D063 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5228816C4600A2D063 /* TrackCell.swift */; };
 		DB9B3C552881838A00A2D063 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C542881838A00A2D063 /* TrackDetailView.swift */; };
 		DB9B3C5728818AE100A2D063 /* TrackThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5628818AE100A2D063 /* TrackThumbnailView.swift */; };
-		DB9B3C5928818B8300A2D063 /* TrackKeyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5828818B8300A2D063 /* TrackKeyDetailView.swift */; };
 		DB9B3C5B2881915100A2D063 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5A2881915100A2D063 /* RootView.swift */; };
 		DB9B3C5F2881985B00A2D063 /* TracksDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5E2881985B00A2D063 /* TracksDBManager.swift */; };
 		DB9B3C612881A66300A2D063 /* FetchedTracksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C602881A66300A2D063 /* FetchedTracksResponse.swift */; };
@@ -41,7 +40,6 @@
 		DB9B3C5228816C4600A2D063 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		DB9B3C542881838A00A2D063 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		DB9B3C5628818AE100A2D063 /* TrackThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackThumbnailView.swift; sourceTree = "<group>"; };
-		DB9B3C5828818B8300A2D063 /* TrackKeyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackKeyDetailView.swift; sourceTree = "<group>"; };
 		DB9B3C5A2881915100A2D063 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		DB9B3C5E2881985B00A2D063 /* TracksDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksDBManager.swift; sourceTree = "<group>"; };
 		DB9B3C602881A66300A2D063 /* FetchedTracksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedTracksResponse.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				DB9B3C5228816C4600A2D063 /* TrackCell.swift */,
 				DB9B3C542881838A00A2D063 /* TrackDetailView.swift */,
 				DB9B3C5628818AE100A2D063 /* TrackThumbnailView.swift */,
-				DB9B3C5828818B8300A2D063 /* TrackKeyDetailView.swift */,
 				DB9B3C5A2881915100A2D063 /* RootView.swift */,
 				DBF3AD9C28828F64008E249A /* FavoritesListView.swift */,
 			);
@@ -234,7 +231,6 @@
 				DB9B3C412881303A00A2D063 /* TracksAPIManager.swift in Sources */,
 				DBF3AD9F28828FA9008E249A /* FavoritesListViewModel.swift in Sources */,
 				DB9B3C5728818AE100A2D063 /* TrackThumbnailView.swift in Sources */,
-				DB9B3C5928818B8300A2D063 /* TrackKeyDetailView.swift in Sources */,
 				DB9B3C5328816C4600A2D063 /* TrackCell.swift in Sources */,
 				DBF3AD9D28828F64008E249A /* FavoritesListView.swift in Sources */,
 				DB9B3C5F2881985B00A2D063 /* TracksDBManager.swift in Sources */,
