@@ -9,16 +9,18 @@ import SwiftUI
 
 struct FavoritesListView: View {
     
-    @ObservedObject var viewModel: FavoritesListViewModel
+    @ObservedObject var viewModel = FavoritesListViewModel()
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 15), count: 3)
     
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 15) {
-                    ForEach(viewModel.favorites, id: \.id) { trackVM in
-                        TrackCell(track: trackVM) { trackVM in
-                            viewModel.toggleFavorite(for: trackVM)
+                    ForEach(viewModel.favorites, id: \.id) { track in
+                        NavigationLink {
+                            TrackDetailView(track: track)
+                        } label: {
+                            TrackCell(track: track)
                         }
                     }
                 }.padding(10)

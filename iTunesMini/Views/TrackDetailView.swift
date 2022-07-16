@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TrackDetailView: View {
     let track: TrackViewModel
-    let toggleFavoriteAction: ((TrackViewModel) -> Void)
     
     var body: some View {
         ScrollView {
@@ -58,7 +57,7 @@ struct TrackDetailView: View {
                     
                     Button {
                         print("Favorite tapped!")
-                        toggleFavoriteAction(track)
+                        track.toggleIsFavorite()
                     } label: {
                         Image(systemName: track.isFavorite ? "heart.fill" : "heart")
                             .font(.system(size: 17))

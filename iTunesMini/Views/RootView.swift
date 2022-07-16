@@ -18,7 +18,7 @@ struct RootView: View {
                     Label("Tracks", systemImage: "music.quarternote.3")
                 }
             
-            FavoritesListView(viewModel: FavoritesListViewModel(store: tracksStore))
+            FavoritesListView()
                 .tabItem {
                     Label("Favorites", systemImage: "heart")
                 }

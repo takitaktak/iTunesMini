@@ -31,7 +31,11 @@ class Track: Object {
     }
     
     func toggleIsFavorite() {
-        isFavorite.toggle()
+        if let realm = self.realm {
+            try! realm.write {
+                isFavorite.toggle()
+            }
+        }
     }
 }
 

@@ -18,17 +18,14 @@ class TrackViewModel: ObservableObject {
     var description: String { track.longDescription ?? "n/a" }
     
     fileprivate let track: Track
-    fileprivate let dbManager: TracksDBManager
     
-    init(_ track: Track, dbManager: TracksDBManager = TracksDBManager()) {
+    init(_ track: Track) {
         self.track = track
-        self.dbManager = dbManager
         self.isFavorite = track.isFavorite
     }
     
     func toggleIsFavorite() {
-        dbManager.toggleTrackFavorite(track)
-        isFavorite = track.isFavorite
+        track.toggleIsFavorite()
     }
     
 }

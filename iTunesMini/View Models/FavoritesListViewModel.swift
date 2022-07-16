@@ -6,22 +6,25 @@
 //
 
 import Foundation
+import RealmSwift
 
 class FavoritesListViewModel: ObservableObject {
-    fileprivate let store: TracksStore
     
     @Published var favorites = [TrackViewModel]()
     
-    init(store: TracksStore) {
-        self.store = store
+    fileprivate var token: NotificationToken?
+    fileprivate let realm = try! Realm()
+    
+    init() {
+        let results = realm.objects(Track.self).where({ $0.isFavorite == true })
+        favorites = Array(results).map({ TrackViewModel($0) })
+        
+        token = results.observe { _ in
+            self.fetchFavorites()
+        }
     }
     
     func fetchFavorites() {
-        favorites = TrackViewModel.parseTracks(store.fetchFavorites())
-    }
-    
-    func toggleFavorite(for track: TrackViewModel) {
-        track.toggleIsFavorite()
-        fetchFavorites()
+        favorites = Array(realm.objects(Track.self).where({ $0.isFavorite == true })).map({ TrackViewModel($0) })
     }
 }
