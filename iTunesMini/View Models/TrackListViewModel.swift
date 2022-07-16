@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import RealmSwift
 
 class TrackListViewModel: ObservableObject {
     
@@ -17,31 +18,38 @@ class TrackListViewModel: ObservableObject {
         }
     }
     
-    fileprivate var tracks = [TrackViewModel]()
-    fileprivate let store: TracksStore
+    fileprivate var token: NotificationToken?
+    fileprivate let realm = try! Realm()
     
-    // MARK: - Life Cycle
-    init(store: TracksStore = TracksStore()) {
-        self.store = store
+    init() {
+        let results = realm.objects(Track.self)
+        
+        token = results.observe { _ in
+            self.filterTracks()
+        }
+        
+        filteredTracks = Array(results).map { TrackViewModel($0) }
     }
     
-    func fetchAllTracks() {
-        tracks = store.tracks.map({ TrackViewModel($0) })
-        filterTracks()
+    deinit {
+        token?.invalidate()
+    }
+    
+    fileprivate func fetchAllTracks() -> [TrackViewModel] {
+        return Array(realm.objects(Track.self)).map { TrackViewModel($0) }
+    }
+    
+    fileprivate func queryTracks() -> [TrackViewModel] {
+        return Array(realm.objects(Track.self).where{ $0.trackName.contains(searchText) }).map{ TrackViewModel($0) }
     }
     
     func filterTracks() {
         if searchText.isEmpty {
-            filteredTracks = tracks
+            filteredTracks = fetchAllTracks()
             return
         }
         
-        filteredTracks = tracks.filter({ $0.name.contains(searchText) })
-    }
-    
-    func toggleFavorite(for track: TrackViewModel) {
-        track.toggleIsFavorite()
-        objectWillChange.send()
+        filteredTracks = queryTracks()
     }
     
 }

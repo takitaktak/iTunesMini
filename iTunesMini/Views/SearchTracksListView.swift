@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchTracksListView: View {
     
-    @ObservedObject var viewModel: TrackListViewModel
+    @ObservedObject var viewModel = TrackListViewModel()
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 15), count: 3)
     
     var body: some View {
@@ -30,7 +30,7 @@ struct SearchTracksListView: View {
             .navigationTitle("Tracks")
         }
         .onAppear {
-            viewModel.fetchAllTracks()
+            viewModel.filterTracks()
         }
     }
 }

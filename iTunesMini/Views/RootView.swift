@@ -13,7 +13,7 @@ struct RootView: View {
     
     var body: some View {
         TabView {
-            SearchTracksListView(viewModel: TrackListViewModel(store: tracksStore))
+            SearchTracksListView()
                 .tabItem {
                     Label("Tracks", systemImage: "music.quarternote.3")
                 }

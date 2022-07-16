@@ -24,6 +24,10 @@ class FavoritesListViewModel: ObservableObject {
         }
     }
     
+    deinit {
+        token?.invalidate()
+    }
+    
     func fetchFavorites() {
         favorites = Array(realm.objects(Track.self).where({ $0.isFavorite == true })).map({ TrackViewModel($0) })
     }
