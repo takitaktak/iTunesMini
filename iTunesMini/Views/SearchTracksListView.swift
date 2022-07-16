@@ -61,7 +61,7 @@ struct SearchTracksListView: View {
                                     .font(.system(size: 12, weight: .light))
                                     .foregroundColor(Color.gray)
                                     .lineLimit(1)
-                                                                    
+                                
                                 Spacer()
                                 
                                 Text(trackVM.price)

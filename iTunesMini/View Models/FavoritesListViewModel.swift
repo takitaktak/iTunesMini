@@ -19,4 +19,9 @@ class FavoritesListViewModel: ObservableObject {
     func fetchFavorites() {
         favorites = TrackViewModel.parseTracks(store.fetchFavorites())
     }
+    
+    func toggleFavorite(for track: TrackViewModel) {
+        track.toggleIsFavorite()
+        fetchFavorites()
+    }
 }
