@@ -9,26 +9,36 @@ import SwiftUI
 
 struct TrackThumbnailView: View {
     
-    @EnvironmentObject var viewModel: TrackViewModel
+    let viewModel: TrackViewModel
+    let toggleFavoriteAction: () -> Void
     
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            AsyncImage(url: URL(string: viewModel.artwork)) { image in
+        AsyncImage(url: URL(string: viewModel.artwork)) { phase in
+            switch phase {
+            case .empty:
+                ProgressView()
+                
+            case .success(let image):
                 image
                     .resizable()
-                    .aspectRatio(1, contentMode: .fill)
-            } placeholder: {
-                Color.green
+                    .scaledToFill()
+                
+            default:
+                Image(systemName: "music.note")
             }
-            
+        }
+        .overlay(alignment: .topTrailing) {
             Button {
-                viewModel.toggleIsFavorite()
+                print("Favorite tapped!")
+                toggleFavoriteAction()
             } label: {
                 Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
                     .resizable()
-                    .frame(width: 25, height: 25)
-                    .padding(5)
+                    .scaledToFit()
+                    .foregroundColor(viewModel.isFavorite ? Color.pink : Color.gray)
             }
+            .frame(width: 20, height: 20)
+            .padding(5)
         }
     }
 }

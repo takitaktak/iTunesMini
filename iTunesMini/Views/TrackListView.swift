@@ -18,8 +18,9 @@ struct TrackListView: View {
             LazyVGrid(columns: columns) {
                 ForEach(tracks, id: \.id) { trackVM in
                     NavigationLink {
-                        TrackDetailView()
-                            .environmentObject(trackVM)
+                        Text("Hello")
+//                        TrackDetailView()
+//                            .environmentObject(trackVM)
                     } label: {
                         TrackCell()
                             .environmentObject(trackVM)

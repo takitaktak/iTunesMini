@@ -9,11 +9,12 @@ import SwiftUI
 
 struct TrackDetailView: View {
     @EnvironmentObject var track: TrackViewModel
+    let toggleFavoriteAction: () -> Void
     
     var body: some View {
             ScrollView {
                 VStack(spacing: 10) {
-                    TrackThumbnailView()
+                    TrackThumbnailView(viewModel: track, toggleFavoriteAction: toggleFavoriteAction)
                     TrackKeyDetailView(track: track)
                     Text(track.description)
                 }.padding()

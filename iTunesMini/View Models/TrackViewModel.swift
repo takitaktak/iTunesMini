@@ -14,7 +14,7 @@ class TrackViewModel: ObservableObject {
     var artwork: String { track.artworkUrl60 ?? "" }
     var name: String { track.trackName ?? "n/a" }
     var genre: String { track.primaryGenreName ?? "n/a" }
-    var price: Double { track.trackPrice }
+    var price: String { String(format: "$%.2f", track.trackPrice) }
     var description: String { track.longDescription ?? "n/a" }
     
     fileprivate let track: Track

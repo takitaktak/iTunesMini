@@ -39,4 +39,9 @@ class TrackListViewModel: ObservableObject {
         filteredTracks = tracks.filter({ $0.name.contains(searchText) })
     }
     
+    func toggleFavorite(for track: TrackViewModel) {
+        track.toggleIsFavorite()
+        objectWillChange.send()
+    }
+    
 }

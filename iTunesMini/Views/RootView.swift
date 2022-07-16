@@ -22,7 +22,7 @@ struct RootView: View {
                 .tabItem {
                     Label("Favorites", systemImage: "heart")
                 }
-        }
+        }.accentColor(Color.pink)
     }
 }
 

@@ -12,7 +12,7 @@ struct TrackCell: View {
     
     var body: some View {
         VStack {
-            TrackThumbnailView()
+//            TrackThumbnailView()
             TrackKeyDetailView(track: track)
         }
     }
