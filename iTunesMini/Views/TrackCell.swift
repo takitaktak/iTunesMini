@@ -12,60 +12,69 @@ struct TrackCell: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            // Artwork
-            AsyncImage(url: URL(string: track.artwork)) { phase in
-                switch phase {
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                    
-                default:
-                    ZStack {
-                        Image(systemName: "music.note")
-                            .font(.title)
-                    }.frame(maxWidth: .infinity)
-                    
+            // Artwork & Price
+            buildThumbnailView()
+                .overlay(alignment: .bottomTrailing) {
+                    buildPriceLabel()
                 }
-            }
-            .frame(height: 100, alignment: .center)
-            .background(Color(UIColor.lightGray))
-            .clipped()
             
-            // Favorite Button
-            .overlay(alignment: .bottomTrailing) {
-                Text(track.price)
-                    .font(.system(size: 13, weight: .bold))
-                    .lineLimit(1)
-                    .foregroundColor(Color.white)
-                    .padding(7)
-                    .background(Color.black.opacity(0.5))
-                    .cornerRadius(15)
-                    .padding(3)
-            }
-            
-            // Track Name
-            Text(track.name)
-                .font(.system(size: 14, weight: .semibold))
-                .lineLimit(1)
+            buildNameLabel()
             
             HStack {
-                Text(track.genre)
-                    .font(.system(size: 12, weight: .light))
-                    .foregroundColor(Color.gray)
-                    .lineLimit(1)
+                buildGenreLabel()
                 
                 Spacer()
                 
-                Button {
+                ToggleFavoriteButton(isFavorite: track.isFavorite, size: 17) {
                     track.toggleIsFavorite()
-                } label: {
-                    Image(systemName: track.isFavorite ? "heart.fill" : "heart")
-                        .font(.system(size: 17))
-                        .foregroundColor(track.isFavorite ? Color.red : Color.gray)
                 }
+            }
+        }
+        .padding(10)
+    }
+    
+    fileprivate func buildThumbnailView() -> some View {
+        AsyncImage(url: URL(string: track.artwork)) { phase in
+            switch phase {
+            case .success(let image):
+                image
+                    .resizable()
+                    .scaledToFill()
+                
+            default:
+                ZStack {
+                    Image(systemName: "music.note")
+                        .font(.title)
+                }.frame(maxWidth: .infinity)
                 
             }
-        }.padding(5)
+        }
+        .frame(height: 100, alignment: .center)
+        .background(Color(UIColor.lightGray))
+        .clipped()
+    }
+    
+    fileprivate func buildPriceLabel() -> some View {
+        return Text(track.price)
+            .font(.system(size: 13, weight: .bold))
+            .lineLimit(1)
+            .foregroundColor(Color.white)
+            .padding(7)
+            .background(Color.black.opacity(0.5))
+            .cornerRadius(15)
+            .padding(3)
+    }
+    
+    fileprivate func buildNameLabel() -> some View {
+        return Text(track.name)
+            .font(.system(size: 14, weight: .semibold))
+            .lineLimit(1)
+    }
+    
+    fileprivate func buildGenreLabel() -> some View {
+        return Text(track.genre)
+            .font(.system(size: 12, weight: .light))
+            .foregroundColor(Color.gray)
+            .lineLimit(1)
     }
 }
