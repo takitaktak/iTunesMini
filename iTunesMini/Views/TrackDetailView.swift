@@ -32,13 +32,13 @@ struct TrackDetailView: View {
                     }
                 }
                 .frame(maxWidth: .infinity)
-                .frame(height: 200, alignment: .center)
+                .frame(height: 100, alignment: .center)
                 .clipped()
                 
                 // Favorite Button
                 .overlay(alignment: .bottomTrailing) {
                     Text(track.price)
-                        .font(.system(size: 15, weight: .bold))
+                        .font(.system(size: 13, weight: .bold))
                         .lineLimit(1)
                         .foregroundColor(Color.white)
                         .padding(7)

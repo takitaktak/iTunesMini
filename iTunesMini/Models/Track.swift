@@ -12,8 +12,6 @@ class Track: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var trackName: String?
     @Persisted var trackPrice: Double = 0.0
-    @Persisted var artworkUrl30: String?
-    @Persisted var artworkUrl60: String?
     @Persisted var artworkUrl100: String?
     @Persisted var longDescription: String?
     @Persisted var primaryGenreName: String?
@@ -25,8 +23,6 @@ class Track: Object {
         self.init()
         self.trackName = apiTrack.trackName
         self.trackPrice = apiTrack.trackPrice ?? 0.0
-        self.artworkUrl30 = apiTrack.artworkUrl30
-        self.artworkUrl60 = apiTrack.artworkUrl60
         self.artworkUrl100 = apiTrack.artworkUrl100
         self.longDescription = apiTrack.longDescription
         self.primaryGenreName = apiTrack.primaryGenreName        
