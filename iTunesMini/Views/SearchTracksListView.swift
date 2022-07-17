@@ -26,7 +26,7 @@ struct SearchTracksListView: View {
                     }
                 }.padding(10)
             }
-            .searchable(text: $viewModel.searchText)
+            .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
