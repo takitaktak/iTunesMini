@@ -11,9 +11,14 @@ struct RootView: View {
     
     var body: some View {
         TabView {
+            RecentTracksView(viewModel: RecentTracksViewModel())
+                .tabItem {
+                    Label("Recents", systemImage: "clock")
+                }
+            
             SearchTracksListView(viewModel: SearchListViewModel())
                 .tabItem {
-                    Label("Tracks", systemImage: "music.quarternote.3")
+                    Label("Search", systemImage: "magnifyingglass")
                 }
             
             FavoritesListView(viewModel: FavoritesListViewModel())

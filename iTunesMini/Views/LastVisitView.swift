@@ -21,11 +21,22 @@ struct LastVisitView: View {
     var body: some View {
         Text("Last Visit: \(lastVisitString)")
             .font(.caption)
+            .frame(maxWidth: .infinity)
             .foregroundColor(Color(UIColor.gray))
             .onChange(of: scenePhase) { newPhase in
-                if newPhase == .background {
+                switch newPhase {
+                case .background, .inactive:
                     lastVisitString = formatter.string(from: Date())
+                    
+                case .active:
+                    if lastVisitString.isEmpty {
+                        lastVisitString = formatter.string(from: Date())
+                    }
+                    
+                default:
+                    break
                 }
+                
             }
     }
 }

@@ -27,7 +27,7 @@ struct SearchTracksListView: View {
                                 NavigationLink {
                                     TrackDetailView(track: trackVM)
                                 } label: {
-                                    TrackCell(track: trackVM, hideFaveButton: true)
+                                    TrackCell(track: trackVM)
                                 }
                             }
                         } header: {

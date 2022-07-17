@@ -9,21 +9,16 @@ import SwiftUI
 
 struct TrackCell: View {
     let track: TrackViewModel
-    let hideFaveButton: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             // Artwork & Price
             buildThumbnailView()
                 .overlay(alignment: .topTrailing) {
-                    if hideFaveButton {
-                        EmptyView()
-                    } else {
-                        ToggleFavoriteButton(isFavorite: track.isFavorite, size: 13) {
-                            track.toggleIsFavorite()
-                        }
-                        .padding(2)
-                    }                    
+                    ToggleFavoriteButton(isFavorite: track.isFavorite, size: 13) {
+                        track.toggleIsFavorite()
+                    }
+                    .padding(2)
                 }
             
             buildNameLabel()
@@ -31,11 +26,6 @@ struct TrackCell: View {
             buildPriceLabel()
         }
         .padding(10)
-    }
-    
-    init(track: TrackViewModel, hideFaveButton: Bool = false) {
-        self.track = track
-        self.hideFaveButton = hideFaveButton
     }
     
     fileprivate func buildThumbnailView() -> some View {
