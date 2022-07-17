@@ -48,6 +48,10 @@ class SearchListViewModel: ObservableObject {
         self.dbManager = dbManager
     }
     
+    deinit {
+        token?.invalidate()
+    }
+    
     func searchTracks(_ searchText: String) {
         if searchText.isEmpty { return }
         
@@ -62,11 +66,7 @@ class SearchListViewModel: ObservableObject {
                 let finalIds = self.dbManager.saveTracks(tracks: tracks)
                 let resultsToObserve = self.dbManager.fetchTracks(withIds: finalIds)
                 
-                if self.token != nil {
-                    self.token?.invalidate()
-                    self.token = nil
-                }
-                
+                self.token?.invalidate()
                 self.token = resultsToObserve.observe { changes in
                     switch changes {
                     case .initial(let initialResults):
