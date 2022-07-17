@@ -12,8 +12,7 @@ struct iTunesMiniApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView()
-                .environmentObject(RootViewModel())
+            RootView(viewModel: RootViewModel())
                 .accentColor(Color.pink)
         }
     }

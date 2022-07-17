@@ -73,7 +73,8 @@ struct TrackDetailView: View {
                 
                 Text(track.description)
                     .font(.system(size: 13, weight: .light))
-            }.padding(10)
+            }
+            .padding(10)
         }
     }
 }

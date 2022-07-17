@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RootView: View {
     
-    @EnvironmentObject var viewModel: RootViewModel
+    @ObservedObject var viewModel: RootViewModel
     
     var body: some View {
         switch viewModel.result {
@@ -47,6 +47,6 @@ struct RootView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        RootView(viewModel: RootViewModel())
     }
 }
