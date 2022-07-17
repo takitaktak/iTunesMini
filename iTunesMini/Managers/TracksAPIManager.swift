@@ -15,7 +15,7 @@ enum APIError: Error {
 
 class TracksAPIManager {
     
-    func fetchTracks(completion: @escaping (Result<[APITrack], APIError>) -> Void) {
+    func fetchTracks(completion: @escaping (Result<[Track], APIError>) -> Void) {
         let urlString = "https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all"
         
         guard let url = URL(string: urlString) else {

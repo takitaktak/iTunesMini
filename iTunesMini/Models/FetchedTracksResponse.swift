@@ -8,19 +8,9 @@
 import Foundation
 
 struct FetchedTracksResponse: Decodable {
-    let tracks: [APITrack]
+    let tracks: [Track]
     
     private enum CodingKeys: String, CodingKey {
         case tracks = "results"
     }
-}
-
-struct APITrack: Decodable {
-    let trackName: String?
-    let trackPrice: Double?
-    let primaryGenreName: String?
-    let artworkUrl30: String?
-    let artworkUrl60: String?
-    let artworkUrl100: String?
-    let longDescription: String?
 }

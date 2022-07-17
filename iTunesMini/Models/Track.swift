@@ -8,10 +8,11 @@
 import Foundation
 import RealmSwift
 
-class Track: Object {
+class Track: Object, Codable {
+    
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String?
-    @Persisted var price: Double = 0.0
+    @Persisted var price: Double?
     @Persisted var artworkUrl: String?
     @Persisted var longDescription: String?
     @Persisted var genre: String?
@@ -19,27 +20,18 @@ class Track: Object {
     
     var id: String { _id.stringValue }
     
-    convenience init(apiTrack: APITrack) {
-        self.init()
-        self.name = apiTrack.trackName
-        self.price = apiTrack.trackPrice ?? 0.0
-        self.artworkUrl = apiTrack.artworkUrl100
-        self.longDescription = apiTrack.longDescription
-        self.genre = apiTrack.primaryGenreName        
+    private enum CodingKeys: String, CodingKey {
+        case name = "trackName"
+        case price = "trackPrice"
+        case artworkUrl = "artworkUrl100"
+        case genre = "primaryGenreName"
     }
     
     func toggleIsFavorite() {
-        if let realm = self.realm {
-            try! realm.write {
-                isFavorite.toggle()
-            }
+        guard let realm = self.realm else { return }
+        try! realm.write {
+            isFavorite.toggle()
         }
     }
-}
-
-// MARK: - Helper Methods
-extension Track {
-    static func parseApiTracks(_ apiTracks: [APITrack]) -> [Track] {
-        return apiTracks.map({ Track(apiTrack: $0) })
-    }
+    
 }

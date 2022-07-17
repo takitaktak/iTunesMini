@@ -14,7 +14,7 @@ class TrackViewModel: ObservableObject {
     var artwork: String { track.artworkUrl ?? "" }
     var name: String { track.name ?? "n/a" }
     var genre: String { track.genre ?? "n/a" }
-    var price: String { String(format: "$%.2f", track.price) }
+    var price: String {  (track.price == nil) ? "n/a" : String(format: "$%.2f", track.price!) }
     var description: String { track.longDescription ?? "n/a" }
     
     fileprivate let track: Track

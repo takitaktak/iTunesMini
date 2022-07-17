@@ -44,8 +44,7 @@ class RootViewModel: ObservableObject {
     fileprivate func fetchAPITracks() {
         apiManager.fetchTracks { [unowned self] result in
             switch result {
-            case .success(let apiTracks):
-                let tracks = Track.parseApiTracks(apiTracks)
+            case .success(let tracks):
                 self.dbManager.saveTracks(tracks: tracks)
                 self.result = .success
                 
