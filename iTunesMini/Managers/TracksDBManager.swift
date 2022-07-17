@@ -24,9 +24,9 @@ class TracksDBManager {
         }        
     }
     
-    func saveTracks(tracks: [Track]) -> [ObjectId] {
+    func saveTracks(tracks: [Track]) -> Results<Track> {
         let finalIds = tracks.map{ saveTrack($0) }
-        return finalIds
+        return fetchTracks(withIds: finalIds)
     }
     
     func saveTrack(_ track: Track) -> ObjectId {
@@ -50,7 +50,7 @@ class TracksDBManager {
         realm.objects(Track.self)
     }
     
-    func fetchTracks(withIds ids: [ObjectId]) -> Results<Track> {
+    fileprivate func fetchTracks(withIds ids: [ObjectId]) -> Results<Track> {
         realm.objects(Track.self).filter("_id in %@", ids)
     }
     
