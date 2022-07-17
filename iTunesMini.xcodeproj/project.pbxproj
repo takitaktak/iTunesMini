@@ -18,7 +18,7 @@
 		DB9B3C2E28812FC800A2D063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B3C2D28812FC800A2D063 /* Assets.xcassets */; };
 		DB9B3C3128812FC800A2D063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B3C3028812FC800A2D063 /* Preview Assets.xcassets */; };
 		DB9B3C412881303A00A2D063 /* TracksAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C402881303A00A2D063 /* TracksAPIManager.swift */; };
-		DB9B3C4C28815DBD00A2D063 /* TrackListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C4B28815DBD00A2D063 /* TrackListViewModel.swift */; };
+		DB9B3C4C28815DBD00A2D063 /* SearchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C4B28815DBD00A2D063 /* SearchListViewModel.swift */; };
 		DB9B3C4F28815E9C00A2D063 /* SearchTracksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C4E28815E9C00A2D063 /* SearchTracksListView.swift */; };
 		DB9B3C5128815F6900A2D063 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5028815F6900A2D063 /* TrackViewModel.swift */; };
 		DB9B3C5328816C4600A2D063 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5228816C4600A2D063 /* TrackCell.swift */; };
@@ -42,7 +42,7 @@
 		DB9B3C2D28812FC800A2D063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB9B3C3028812FC800A2D063 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB9B3C402881303A00A2D063 /* TracksAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksAPIManager.swift; sourceTree = "<group>"; };
-		DB9B3C4B28815DBD00A2D063 /* TrackListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewModel.swift; sourceTree = "<group>"; };
+		DB9B3C4B28815DBD00A2D063 /* SearchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewModel.swift; sourceTree = "<group>"; };
 		DB9B3C4E28815E9C00A2D063 /* SearchTracksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTracksListView.swift; sourceTree = "<group>"; };
 		DB9B3C5028815F6900A2D063 /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 		DB9B3C5228816C4600A2D063 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			children = (
 				DBF3AD9E28828FA9008E249A /* FavoritesListViewModel.swift */,
 				DB6660752883BBCD005DC215 /* RootViewModel.swift */,
-				DB9B3C4B28815DBD00A2D063 /* TrackListViewModel.swift */,
+				DB9B3C4B28815DBD00A2D063 /* SearchListViewModel.swift */,
 				DB9B3C5028815F6900A2D063 /* TrackViewModel.swift */,
 			);
 			path = "View Models";
@@ -228,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB9B3C4C28815DBD00A2D063 /* TrackListViewModel.swift in Sources */,
+				DB9B3C4C28815DBD00A2D063 /* SearchListViewModel.swift in Sources */,
 				DB9B3C412881303A00A2D063 /* TracksAPIManager.swift in Sources */,
 				DBF3AD9F28828FA9008E249A /* FavoritesListViewModel.swift in Sources */,
 				DB9B3C5328816C4600A2D063 /* TrackCell.swift in Sources */,
