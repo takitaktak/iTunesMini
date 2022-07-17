@@ -16,40 +16,46 @@ struct TrackDetailView: View {
                 // Artwork
                 AsyncImage(url: URL(string: track.artwork)) { phase in
                     switch phase {
-                    case .empty:
-                        ProgressView()
-                        
                     case .success(let image):
                         image
                             .resizable()
-                            .scaledToFill()
+                            .scaledToFit()
                         
                     default:
-                        Image(systemName: "music.note")
+                        ZStack {
+                            Image(systemName: "music.note")
+                                .font(.title)
+                                .foregroundColor(Color.accentColor)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color(UIColor.lightGray))
                     }
                 }
+                .frame(maxWidth: .infinity)
+                .frame(height: 200, alignment: .center)
                 .clipped()
                 
                 // Favorite Button
                 .overlay(alignment: .bottomTrailing) {
                     Text(track.price)
-                        .padding(2)
-                        .font(.system(size: 13, weight: .bold))
-                        .foregroundColor(Color.white)
+                        .font(.system(size: 15, weight: .bold))
                         .lineLimit(1)
+                        .foregroundColor(Color.white)
+                        .padding(7)
                         .background(Color.black.opacity(0.5))
-                        .cornerRadius(7)
-                        .padding(5)
+                        .cornerRadius(15)
+                        .padding(3)
                 }
                 
                 // Track Name
                 Text(track.name)
-                    .font(.system(size: 14, weight: .semibold))
+                    .font(.system(size: 15, weight: .semibold))
                     .lineLimit(1)
+                    .foregroundColor(Color.accentColor)
                 
                 HStack {
                     Text(track.genre)
-                        .font(.system(size: 12, weight: .light))
+                        .font(.system(size: 13, weight: .light))
                         .foregroundColor(Color.gray)
                         .lineLimit(1)
                     
@@ -60,14 +66,14 @@ struct TrackDetailView: View {
                         track.toggleIsFavorite()
                     } label: {
                         Image(systemName: track.isFavorite ? "heart.fill" : "heart")
-                            .font(.system(size: 17))
+                            .font(.system(size: 20))
                             .foregroundColor(track.isFavorite ? Color.red : Color.gray)
                     }
                     
                 }
                 
                 Text(track.description)
-                    .font(.system(size: 12, weight: .light))
+                    .font(.system(size: 13, weight: .light))
             }.padding(10)
         }
     }

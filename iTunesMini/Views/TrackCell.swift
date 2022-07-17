@@ -15,31 +15,33 @@ struct TrackCell: View {
             // Artwork
             AsyncImage(url: URL(string: track.artwork)) { phase in
                 switch phase {
-                case .empty:
-                    ProgressView()
-                    
                 case .success(let image):
                     image
                         .resizable()
                         .scaledToFill()
                     
                 default:
-                    Image(systemName: "music.note")
+                    ZStack {
+                        Image(systemName: "music.note")
+                            .font(.title)
+                    }.frame(maxWidth: .infinity)
+                    
                 }
             }
             .frame(height: 100, alignment: .center)
+            .background(Color(UIColor.lightGray))
             .clipped()
             
             // Favorite Button
             .overlay(alignment: .bottomTrailing) {
                 Text(track.price)
-                    .padding(2)
                     .font(.system(size: 13, weight: .bold))
-                    .foregroundColor(Color.white)
                     .lineLimit(1)
+                    .foregroundColor(Color.white)
+                    .padding(7)
                     .background(Color.black.opacity(0.5))
-                    .cornerRadius(7)
-                    .padding(5)
+                    .cornerRadius(15)
+                    .padding(3)
             }
             
             // Track Name
@@ -56,7 +58,6 @@ struct TrackCell: View {
                 Spacer()
                 
                 Button {
-                    print("Favorite tapped!")
                     track.toggleIsFavorite()
                 } label: {
                     Image(systemName: track.isFavorite ? "heart.fill" : "heart")
