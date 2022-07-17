@@ -25,8 +25,17 @@ class TracksDBManager {
     }
     
     func saveTracks(tracks: [Track]) {
+        tracks.forEach{ saveTrack($0) }
+    }
+    
+    func saveTrack(_ track: Track) {
+        // If track already exists, we don't write it to the database.
+        if let _ = realm.objects(Track.self).firstIndex(where: { $0.isSameAPITrack(as: track) }) {
+            return
+        }
+        
         try! realm.write {
-            realm.add(tracks)
+            realm.add(track)
         }
     }
     

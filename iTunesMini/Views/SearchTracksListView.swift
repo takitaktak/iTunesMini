@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchTracksListView: View {
     
     @ObservedObject var viewModel: SearchListViewModel
+    @State var searchText = ""
     
     private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 15), count: 3)
     
@@ -26,11 +27,11 @@ struct SearchTracksListView: View {
                                 NavigationLink {
                                     TrackDetailView(track: trackVM)
                                 } label: {
-                                    TrackCell(track: trackVM)
+                                    TrackCell(track: trackVM, hideFaveButton: true)
                                 }
                             }
                         } header: {
-                            Text(viewModel.resultMessage)
+                            Text(viewModel.searchResultMessage)
                                 .font(.caption)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(5)
@@ -41,16 +42,12 @@ struct SearchTracksListView: View {
                     }.padding(10)
                 }                
             }
-            .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .onSubmit(of: .search) {
-                viewModel.searchTracks()
+                viewModel.searchTracks(searchText)
             }
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    SubtitleNavBar(title: "Tracks")
-                }
-            }
+            .navigationTitle("Search")
         }
     }
 }

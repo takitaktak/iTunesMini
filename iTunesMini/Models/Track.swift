@@ -30,6 +30,19 @@ class Track: Object, Codable {
         case genre = "primaryGenreName"
     }
     
+    var fieldsHashValue: Int {
+        return (name ?? "").hashValue
+        ^ (price ?? 0.0).hashValue
+        ^ (currency ?? "").hashValue
+        ^ (artworkUrl ?? "").hashValue
+        ^ (longDescription ?? "").hashValue
+        ^ (genre ?? "").hashValue
+    }
+    
+    func isSameAPITrack(as track: Track) -> Bool {
+        return fieldsHashValue == track.fieldsHashValue
+    }
+    
     func toggleIsFavorite() {
         guard let realm = self.realm else { return }
         try! realm.write {
