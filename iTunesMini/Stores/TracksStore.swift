@@ -10,15 +10,22 @@ import RealmSwift
 
 class TracksStore: ObservableObject {
     
-    // MARK: - Published properties
+    // MARK: - "Published" properties
     var favorites = [Track]() {
         didSet {
-            self.objectWillChange.send()
+            objectWillChange.send()
         }
     }
     
-    // MARK: - Private properties
+    var recentTracks = [Track]() {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+    
+    // MARK: - Notification Tokens
     fileprivate var favoritesToken: NotificationToken?
+    fileprivate var recentsToken: NotificationToken?
     
     static let shared = TracksStore()
     
@@ -33,10 +40,12 @@ class TracksStore: ObservableObject {
         self.dbManager = dbManager
         
         observeFavorites()
+        observeRecentTracks()
     }
     
     deinit {
         favoritesToken?.invalidate()
+        recentsToken?.invalidate()
     }
     
 }
@@ -46,11 +55,27 @@ extension TracksStore {
     
     fileprivate func observeFavorites() {
         let results = dbManager.fetchFavorites()
-        
         favoritesToken = results.observe { [unowned self] changes in
             switch changes {
             case .initial(_), .update(_, deletions: _, insertions: _, modifications: _):
                 self.favorites = Array(results)
+            default:
+                break
+            }
+        }
+    }
+    
+}
+
+// MARK: - Recent Tracks Methods
+extension TracksStore {
+    
+    fileprivate func observeRecentTracks() {
+        let results = dbManager.fetchAllTracks()
+        recentsToken = results.observe { [unowned self] changes in
+            switch changes {
+            case .initial(_), .update(_, deletions: _, insertions: _, modifications: _):
+                self.recentTracks = Array(results)
             default:
                 break
             }
