@@ -7,40 +7,23 @@
 
 import Foundation
 import RealmSwift
+import SwiftUI
+import Combine
 
 class FavoritesListViewModel: ObservableObject {
     
-    // MARK: - Published properties
+    @ObservedObject var store: TracksStore
     @Published var favorites = [TrackViewModel]()
     
-    // MARK: - Private properties
-    fileprivate var token: NotificationToken?
+    var subscription: AnyCancellable?
     
     // MARK: - Object Life Cycle
-    init(dbManager: TracksDBManager = TracksDBManager.shared) {
-        let results = dbManager.fetchFavorites()
+    init(store: TracksStore = TracksStore.shared) {
+        self.store = store
         
-        token = results.observe { [unowned self] changes in
-            switch changes {
-            case .initial(let results):
-                self.parseResults(results)
-                
-            case .update(let updatedTracks, deletions: _, insertions: _, modifications: _):
-                self.parseResults(updatedTracks)
-                
-            default:
-                break
-            }
+        subscription = store.objectWillChange.sink { [weak self] _ in
+            self?.favorites = TrackViewModel.parseTracks(Array(store.favorites))
         }
-    }
-    
-    deinit {
-        token?.invalidate()
-    }
-    
-    // MARK: - Helper Method
-    fileprivate func parseResults(_ updatedTracks: Results<Track>) {
-        favorites = TrackViewModel.parseTracks(Array(updatedTracks))
     }
     
 }
