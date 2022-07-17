@@ -10,22 +10,22 @@ import RealmSwift
 
 class Track: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var trackName: String?
-    @Persisted var trackPrice: Double = 0.0
-    @Persisted var artworkUrl100: String?
+    @Persisted var name: String?
+    @Persisted var price: Double = 0.0
+    @Persisted var artworkUrl: String?
     @Persisted var longDescription: String?
-    @Persisted var primaryGenreName: String?
+    @Persisted var genre: String?
     @Persisted var isFavorite: Bool = false
     
     var id: String { _id.stringValue }
     
     convenience init(apiTrack: APITrack) {
         self.init()
-        self.trackName = apiTrack.trackName
-        self.trackPrice = apiTrack.trackPrice ?? 0.0
-        self.artworkUrl100 = apiTrack.artworkUrl100
+        self.name = apiTrack.trackName
+        self.price = apiTrack.trackPrice ?? 0.0
+        self.artworkUrl = apiTrack.artworkUrl100
         self.longDescription = apiTrack.longDescription
-        self.primaryGenreName = apiTrack.primaryGenreName        
+        self.genre = apiTrack.primaryGenreName        
     }
     
     func toggleIsFavorite() {

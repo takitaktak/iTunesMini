@@ -40,7 +40,7 @@ class TrackListViewModel: ObservableObject {
     }
     
     fileprivate func queryTracks() -> [TrackViewModel] {
-        return Array(realm.objects(Track.self).where{ $0.trackName.contains(searchText) }).map{ TrackViewModel($0) }
+        return Array(realm.objects(Track.self).where{ $0.name.contains(searchText) }).map{ TrackViewModel($0) }
     }
     
     func filterTracks() {

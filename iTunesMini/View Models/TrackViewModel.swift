@@ -11,10 +11,10 @@ class TrackViewModel: ObservableObject {
     @Published private(set) var isFavorite = false
     
     var id: String { track.id }
-    var artwork: String { track.artworkUrl100 ?? "" }
-    var name: String { track.trackName ?? "n/a" }
-    var genre: String { track.primaryGenreName ?? "n/a" }
-    var price: String { String(format: "$%.2f", track.trackPrice) }
+    var artwork: String { track.artworkUrl ?? "" }
+    var name: String { track.name ?? "n/a" }
+    var genre: String { track.genre ?? "n/a" }
+    var price: String { String(format: "$%.2f", track.price) }
     var description: String { track.longDescription ?? "n/a" }
     
     fileprivate let track: Track
