@@ -28,7 +28,11 @@ struct SearchTracksListView: View {
             }
             .searchable(text: $viewModel.searchText)
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Tracks")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    SubtitleNavBar(title: "Tracks")
+                }
+            }
         }
     }
 }
