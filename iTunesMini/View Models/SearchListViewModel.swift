@@ -14,6 +14,7 @@ class SearchListViewModel: ObservableObject {
     @Published var filteredTracks = [TrackViewModel]()
     @Published private(set) var resultMessage = ""
     @Published var searchText = ""
+    @Published var isSearching: Bool = false
     
     fileprivate let apiManager: TracksAPIManager
     fileprivate let dbManager: TracksDBManager
@@ -28,11 +29,19 @@ class SearchListViewModel: ObservableObject {
     
     fileprivate enum ListResult {
         case all
+        case filtered(String)
+        case errorSearch(String)
         
         var title: String {
             switch self {
             case .all:
                 return "Showing Existing Tracks"
+                
+            case .filtered(let searchText):
+                return "Showing results for '\(searchText)'"
+                
+            case .errorSearch(let searchText):
+                return "An error occurred while searching for '\(searchText)'..."
             }
         }
         
@@ -56,7 +65,7 @@ class SearchListViewModel: ObservableObject {
 
             case .update(_, deletions: _, insertions: _, modifications: let mods):
                 if mods.isEmpty == false {
-                    self.filteredTracks = TrackViewModel.parseTracks(Array(self.tracksResults))
+                    self.fetchAllTracks()
                 }
 
             default:
@@ -67,6 +76,31 @@ class SearchListViewModel: ObservableObject {
     
     deinit {
         token?.invalidate()
+    }
+    
+    fileprivate func fetchAllTracks() {
+        filteredTracks = TrackViewModel.parseTracks(Array(tracksResults))
+    }
+    
+    func searchTracks() {
+        print("Search! \(searchText)")
+        // TODO: - On Cancel
+        if searchText.isEmpty { return }
+        
+        isSearching = true
+        apiManager.searchTracks(searchText: searchText) { result in
+            self.isSearching = false
+            
+            switch result {
+            case .success(_):
+                self.listResult = .filtered(self.searchText)
+                
+            case .failure(let error):
+                print("Error fetching api tracks: \(error)")
+                self.listResult = .errorSearch(self.searchText)
+                self.filteredTracks = []
+            }
+        }
     }
         
 }

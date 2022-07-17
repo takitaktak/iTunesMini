@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DB1C96D42882B92700B90D31 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DB1C96D32882B92700B90D31 /* Realm */; };
 		DB1C96D62882B92700B90D31 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB1C96D52882B92700B90D31 /* RealmSwift */; };
-		DB6660762883BBCD005DC215 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6660752883BBCD005DC215 /* RootViewModel.swift */; };
 		DB6660782883E0A0005DC215 /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6660772883E0A0005DC215 /* ToggleFavoriteButton.swift */; };
 		DB66607A2883E573005DC215 /* PlaceholderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6660792883E573005DC215 /* PlaceholderImageView.swift */; };
 		DB7DC8572884141E00095745 /* LastVisitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7DC8562884141E00095745 /* LastVisitView.swift */; };
@@ -32,7 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DB6660752883BBCD005DC215 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		DB6660772883E0A0005DC215 /* ToggleFavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleFavoriteButton.swift; sourceTree = "<group>"; };
 		DB6660792883E573005DC215 /* PlaceholderImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderImageView.swift; sourceTree = "<group>"; };
 		DB7DC8562884141E00095745 /* LastVisitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastVisitView.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				DBF3AD9E28828FA9008E249A /* FavoritesListViewModel.swift */,
-				DB6660752883BBCD005DC215 /* RootViewModel.swift */,
 				DB9B3C4B28815DBD00A2D063 /* SearchListViewModel.swift */,
 				DB9B3C5028815F6900A2D063 /* TrackViewModel.swift */,
 			);
@@ -243,7 +240,6 @@
 				DB9B3C652881B60D00A2D063 /* Track.swift in Sources */,
 				DB9B3C4F28815E9C00A2D063 /* SearchTracksListView.swift in Sources */,
 				DB9B3C5B2881915100A2D063 /* RootView.swift in Sources */,
-				DB6660762883BBCD005DC215 /* RootViewModel.swift in Sources */,
 				DB9B3C2A28812FC700A2D063 /* iTunesMiniApp.swift in Sources */,
 				DB7DC8592884143F00095745 /* SubtitleNavBar.swift in Sources */,
 			);

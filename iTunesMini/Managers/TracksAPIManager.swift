@@ -17,8 +17,9 @@ class TracksAPIManager {
     
     static let shared = TracksAPIManager()
     
-    func fetchTracks(completion: @escaping (Result<[Track], APIError>) -> Void) {
-        let urlString = "https://itunes.apple.com/search?term=star&amp;country=au&amp;media=movie&amp;all"
+    func searchTracks(searchText: String, completion: @escaping (Result<[Track], APIError>) -> Void) {
+        let encodedSearchText = searchText.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? ""
+        let urlString = "https://itunes.apple.com/search?term=\(encodedSearchText)&country=au&media=movie&all"
         
         guard let url = URL(string: urlString) else {
             completion(Result.failure(APIError.urlError))

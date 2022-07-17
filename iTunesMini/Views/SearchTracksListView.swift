@@ -16,27 +16,35 @@ struct SearchTracksListView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 15, pinnedViews: [.sectionHeaders]) {
-                    Section {
-                        ForEach(viewModel.filteredTracks, id: \.id) { trackVM in
-                            NavigationLink {
-                                TrackDetailView(track: trackVM)
-                            } label: {
-                                TrackCell(track: trackVM)
+                if viewModel.isSearching {
+                    ProgressView()
+                        .padding()
+                } else {
+                    LazyVGrid(columns: columns, spacing: 15, pinnedViews: [.sectionHeaders]) {
+                        Section {
+                            ForEach(viewModel.filteredTracks, id: \.id) { trackVM in
+                                NavigationLink {
+                                    TrackDetailView(track: trackVM)
+                                } label: {
+                                    TrackCell(track: trackVM)
+                                }
                             }
+                        } header: {
+                            Text(viewModel.resultMessage)
+                                .font(.caption)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(5)
+                                .background(Color.white)
+                            
                         }
-                    } header: {
-                        Text(viewModel.resultMessage)
-                            .font(.caption)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(5)
-                            .background(Color.white)
                         
-                    }
-                    
-                }.padding(10)
+                    }.padding(10)
+                }                
             }
             .searchable(text: $viewModel.searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .onSubmit(of: .search) {
+                viewModel.searchTracks()
+            }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
