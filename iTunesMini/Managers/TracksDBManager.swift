@@ -10,6 +10,8 @@ import RealmSwift
 
 class TracksDBManager {
     
+    static let shared = TracksDBManager()
+    
     var hasNoTracks: Bool { realm.isEmpty }
     
     fileprivate let realm: Realm

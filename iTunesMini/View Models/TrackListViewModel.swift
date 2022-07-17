@@ -23,7 +23,7 @@ class TrackListViewModel: ObservableObject {
     fileprivate let tracksResults: Results<Track>
     
     // MARK: - Object Life Cycle
-    init(dbManager: TracksDBManager = TracksDBManager()) {
+    init(dbManager: TracksDBManager = TracksDBManager.shared) {
         tracksResults = dbManager.fetchAllTracks()
         token = tracksResults.observe { changes in
             switch changes {

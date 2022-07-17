@@ -24,8 +24,8 @@ class RootViewModel: ObservableObject {
     
     // MARK: - Life Cycle
     init(
-        apiManager: TracksAPIManager = TracksAPIManager(),
-        dbManager: TracksDBManager = TracksDBManager()
+        apiManager: TracksAPIManager = TracksAPIManager.shared,
+        dbManager: TracksDBManager = TracksDBManager.shared
     ) {
         self.apiManager = apiManager
         self.dbManager = dbManager

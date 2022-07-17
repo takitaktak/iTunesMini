@@ -17,7 +17,7 @@ class FavoritesListViewModel: ObservableObject {
     fileprivate var token: NotificationToken?
     
     // MARK: - Object Life Cycle
-    init(dbManager: TracksDBManager = TracksDBManager()) {
+    init(dbManager: TracksDBManager = TracksDBManager.shared) {
         let results = dbManager.fetchFavorites()
         
         token = results.observe { [unowned self] changes in
