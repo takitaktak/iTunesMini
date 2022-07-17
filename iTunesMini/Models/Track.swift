@@ -13,6 +13,7 @@ class Track: Object, Codable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var name: String?
     @Persisted var price: Double?
+    @Persisted var currency: String?
     @Persisted var artworkUrl: String?
     @Persisted var longDescription: String?
     @Persisted var genre: String?
@@ -23,7 +24,9 @@ class Track: Object, Codable {
     private enum CodingKeys: String, CodingKey {
         case name = "trackName"
         case price = "trackPrice"
+        case currency = "currency"
         case artworkUrl = "artworkUrl100"
+        case longDescription = "longDescription"
         case genre = "primaryGenreName"
     }
     

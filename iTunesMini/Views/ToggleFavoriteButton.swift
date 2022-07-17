@@ -19,13 +19,15 @@ struct ToggleFavoriteButton: View {
             Image(systemName: isFavorite ? "heart.fill" : "heart")
                 .font(.system(size: size))
                 .foregroundColor(isFavorite ? Color.red : Color.gray)
+                .padding(size * 0.5)
         }
+        .background(Circle().foregroundColor(.white))
     }
 }
 
 struct ToggleFavoriteButton_Previews: PreviewProvider {
     static var previews: some View {
-        ToggleFavoriteButton(isFavorite: false, size: 17) {}
+        ToggleFavoriteButton(isFavorite: true, size: 17) {}
         .previewLayout(.sizeThatFits)
     }
 }

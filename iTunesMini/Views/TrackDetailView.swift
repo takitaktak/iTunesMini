@@ -14,14 +14,13 @@ struct TrackDetailView: View {
         ScrollView {
             VStack(spacing: 10) {
                 buildThumbnailView()
-                    .overlay(alignment: .bottomTrailing) {
-                        buildPriceLabel()
-                    }
-                
                 buildNameLabel()
                 
                 HStack {
-                    buildGenreLabel()
+                    VStack(alignment: .leading, spacing: 5) {
+                        buildGenreLabel()
+                        buildPriceLabel()
+                    }
                     Spacer()
                     
                     ToggleFavoriteButton(isFavorite: track.isFavorite, size: 20) {
@@ -51,13 +50,9 @@ struct TrackDetailView: View {
     
     fileprivate func buildPriceLabel() -> some View {
         Text(track.price)
-            .font(.system(size: 13, weight: .bold))
+            .font(.system(size: 12, weight: .light))
+            .foregroundColor(Color(UIColor.darkGray))
             .lineLimit(1)
-            .foregroundColor(Color.white)
-            .padding(7)
-            .background(Color.black.opacity(0.5))
-            .cornerRadius(15)
-            .padding(3)
     }
     
     fileprivate func buildThumbnailView() -> some View {

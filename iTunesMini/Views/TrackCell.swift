@@ -11,24 +11,19 @@ struct TrackCell: View {
     let track: TrackViewModel
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 2) {
             // Artwork & Price
             buildThumbnailView()
-                .overlay(alignment: .bottomTrailing) {
-                    buildPriceLabel()
+                .overlay(alignment: .topTrailing) {
+                    ToggleFavoriteButton(isFavorite: track.isFavorite, size: 13) {
+                        track.toggleIsFavorite()
+                    }
+                    .padding(2)
                 }
             
             buildNameLabel()
-            
-            HStack {
-                buildGenreLabel()
-                
-                Spacer()
-                
-                ToggleFavoriteButton(isFavorite: track.isFavorite, size: 17) {
-                    track.toggleIsFavorite()
-                }
-            }
+            buildGenreLabel()
+            buildPriceLabel()
         }
         .padding(10)
     }
@@ -51,24 +46,22 @@ struct TrackCell: View {
     
     fileprivate func buildPriceLabel() -> some View {
         return Text(track.price)
-            .font(.system(size: 13, weight: .bold))
+            .font(.system(size: 10, weight: .regular))
+            .foregroundColor(Color(UIColor.darkGray))
             .lineLimit(1)
-            .foregroundColor(Color.white)
-            .padding(7)
-            .background(Color.black.opacity(0.5))
-            .cornerRadius(15)
-            .padding(3)
+            
     }
     
     fileprivate func buildNameLabel() -> some View {
         return Text(track.name)
-            .font(.system(size: 14, weight: .semibold))
+            .font(.system(size: 12, weight: .semibold))
             .lineLimit(1)
+            
     }
     
     fileprivate func buildGenreLabel() -> some View {
         return Text(track.genre)
-            .font(.system(size: 12, weight: .light))
+            .font(.system(size: 11, weight: .light))
             .foregroundColor(Color.gray)
             .lineLimit(1)
     }
