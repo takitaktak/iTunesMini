@@ -21,26 +21,8 @@ struct SearchTracksListView: View {
                     ProgressView()
                         .padding()
                 } else {
-                    LazyVGrid(columns: columns, spacing: 15, pinnedViews: [.sectionHeaders]) {
-                        Section {
-                            ForEach(viewModel.filteredTracks, id: \.id) { trackVM in
-                                NavigationLink {
-                                    TrackDetailView(track: trackVM)
-                                } label: {
-                                    TrackCell(track: trackVM)
-                                }
-                            }
-                        } header: {
-                            Text(viewModel.searchResultMessage)
-                                .font(.caption)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(5)
-                                .background(Color.white)
-                            
-                        }
-                        
-                    }.padding(10)
-                }                
+                    buildGridView()
+                }
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .onSubmit(of: .search) {
@@ -49,5 +31,25 @@ struct SearchTracksListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Search")
         }
+    }
+    
+    fileprivate func buildGridView() -> some View {
+        return LazyVGrid(columns: columns, spacing: 15, pinnedViews: [.sectionHeaders]) {
+            Section {
+                ForEach(viewModel.filteredTracks, id: \.id) { trackVM in
+                    NavigationLink {
+                        TrackDetailView(track: trackVM)
+                    } label: {
+                        TrackCell(track: trackVM)
+                    }
+                }
+            } header: {
+                Text(viewModel.searchResultMessage)
+                    .font(.caption)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(5)
+                    .background(Color.white)
+            }            
+        }.padding(10)
     }
 }
