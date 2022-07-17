@@ -69,13 +69,7 @@ struct TrackDetailView: View {
                     .scaledToFit()
                 
             default:
-                ZStack {
-                    Image(systemName: "music.note")
-                        .font(.title)
-                        .foregroundColor(Color.accentColor)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(UIColor.lightGray))
+                PlaceholderImageView(iconSize: 25)
             }
         }
         .frame(maxWidth: .infinity)

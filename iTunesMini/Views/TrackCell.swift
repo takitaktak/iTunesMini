@@ -42,15 +42,10 @@ struct TrackCell: View {
                     .scaledToFill()
                 
             default:
-                ZStack {
-                    Image(systemName: "music.note")
-                        .font(.title)
-                }.frame(maxWidth: .infinity)
-                
+                PlaceholderImageView(iconSize: 20)
             }
         }
-        .frame(height: 100, alignment: .center)
-        .background(Color(UIColor.lightGray))
+        .frame(width:100, height: 100, alignment: .center)
         .clipped()
     }
     

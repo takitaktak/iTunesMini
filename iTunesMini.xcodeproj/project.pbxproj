@@ -11,6 +11,7 @@
 		DB1C96D62882B92700B90D31 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB1C96D52882B92700B90D31 /* RealmSwift */; };
 		DB6660762883BBCD005DC215 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6660752883BBCD005DC215 /* RootViewModel.swift */; };
 		DB6660782883E0A0005DC215 /* ToggleFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6660772883E0A0005DC215 /* ToggleFavoriteButton.swift */; };
+		DB66607A2883E573005DC215 /* PlaceholderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6660792883E573005DC215 /* PlaceholderImageView.swift */; };
 		DB9B3C2A28812FC700A2D063 /* iTunesMiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C2928812FC700A2D063 /* iTunesMiniApp.swift */; };
 		DB9B3C2E28812FC800A2D063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B3C2D28812FC800A2D063 /* Assets.xcassets */; };
 		DB9B3C3128812FC800A2D063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B3C3028812FC800A2D063 /* Preview Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		DB6660752883BBCD005DC215 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		DB6660772883E0A0005DC215 /* ToggleFavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleFavoriteButton.swift; sourceTree = "<group>"; };
+		DB6660792883E573005DC215 /* PlaceholderImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderImageView.swift; sourceTree = "<group>"; };
 		DB9B3C2628812FC700A2D063 /* iTunesMini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesMini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9B3C2928812FC700A2D063 /* iTunesMiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesMiniApp.swift; sourceTree = "<group>"; };
 		DB9B3C2D28812FC800A2D063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				DB9B3C5228816C4600A2D063 /* TrackCell.swift */,
 				DB9B3C542881838A00A2D063 /* TrackDetailView.swift */,
 				DB6660772883E0A0005DC215 /* ToggleFavoriteButton.swift */,
+				DB6660792883E573005DC215 /* PlaceholderImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				DB9B3C5328816C4600A2D063 /* TrackCell.swift in Sources */,
 				DBF3AD9D28828F64008E249A /* FavoritesListView.swift in Sources */,
 				DB9B3C5F2881985B00A2D063 /* TracksDBManager.swift in Sources */,
+				DB66607A2883E573005DC215 /* PlaceholderImageView.swift in Sources */,
 				DB9B3C612881A66300A2D063 /* FetchedTracksResponse.swift in Sources */,
 				DB6660782883E0A0005DC215 /* ToggleFavoriteButton.swift in Sources */,
 				DB9B3C5128815F6900A2D063 /* TrackViewModel.swift in Sources */,

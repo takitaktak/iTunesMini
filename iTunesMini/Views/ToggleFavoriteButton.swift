@@ -26,5 +26,6 @@ struct ToggleFavoriteButton: View {
 struct ToggleFavoriteButton_Previews: PreviewProvider {
     static var previews: some View {
         ToggleFavoriteButton(isFavorite: false, size: 17) {}
+        .previewLayout(.sizeThatFits)
     }
 }
