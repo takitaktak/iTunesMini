@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct iTunesMiniApp: App {
-    let trackStore = TracksStore()
 
     var body: some Scene {
         WindowGroup {
             RootView()
-                .environmentObject(trackStore)
+                .environmentObject(RootViewModel())
+                .accentColor(Color.pink)
         }
     }
 }

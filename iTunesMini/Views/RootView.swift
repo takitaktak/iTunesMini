@@ -9,9 +9,28 @@ import SwiftUI
 
 struct RootView: View {
     
-    @EnvironmentObject var tracksStore: TracksStore
+    @EnvironmentObject var viewModel: RootViewModel
     
     var body: some View {
+        switch viewModel.result {
+        case .failure(let message):
+            buildErrorText(message)
+            
+        case .loading:
+            ProgressView()
+            
+        case .success:
+            tabView()
+        }
+    }
+    
+    fileprivate func buildErrorText(_ message: String) -> some View {
+        return Text(message)
+            .multilineTextAlignment(.center)
+            .padding(10)
+    }
+    
+    fileprivate func tabView() -> some View {
         TabView {
             SearchTracksListView()
                 .tabItem {
@@ -22,7 +41,7 @@ struct RootView: View {
                 .tabItem {
                     Label("Favorites", systemImage: "heart")
                 }
-        }.accentColor(Color.pink)
+        }
     }
 }
 

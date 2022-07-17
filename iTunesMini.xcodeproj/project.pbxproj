@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DB1C96D42882B92700B90D31 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DB1C96D32882B92700B90D31 /* Realm */; };
 		DB1C96D62882B92700B90D31 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB1C96D52882B92700B90D31 /* RealmSwift */; };
+		DB6660762883BBCD005DC215 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6660752883BBCD005DC215 /* RootViewModel.swift */; };
 		DB9B3C2A28812FC700A2D063 /* iTunesMiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C2928812FC700A2D063 /* iTunesMiniApp.swift */; };
 		DB9B3C2E28812FC800A2D063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B3C2D28812FC800A2D063 /* Assets.xcassets */; };
 		DB9B3C3128812FC800A2D063 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9B3C3028812FC800A2D063 /* Preview Assets.xcassets */; };
@@ -23,12 +24,12 @@
 		DB9B3C5F2881985B00A2D063 /* TracksDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C5E2881985B00A2D063 /* TracksDBManager.swift */; };
 		DB9B3C612881A66300A2D063 /* FetchedTracksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C602881A66300A2D063 /* FetchedTracksResponse.swift */; };
 		DB9B3C652881B60D00A2D063 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9B3C642881B60D00A2D063 /* Track.swift */; };
-		DBB35A4728827EBE00E0983B /* TracksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB35A4628827EBE00E0983B /* TracksStore.swift */; };
 		DBF3AD9D28828F64008E249A /* FavoritesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3AD9C28828F64008E249A /* FavoritesListView.swift */; };
 		DBF3AD9F28828FA9008E249A /* FavoritesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3AD9E28828FA9008E249A /* FavoritesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB6660752883BBCD005DC215 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		DB9B3C2628812FC700A2D063 /* iTunesMini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesMini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9B3C2928812FC700A2D063 /* iTunesMiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesMiniApp.swift; sourceTree = "<group>"; };
 		DB9B3C2D28812FC800A2D063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		DB9B3C5E2881985B00A2D063 /* TracksDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksDBManager.swift; sourceTree = "<group>"; };
 		DB9B3C602881A66300A2D063 /* FetchedTracksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedTracksResponse.swift; sourceTree = "<group>"; };
 		DB9B3C642881B60D00A2D063 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		DBB35A4628827EBE00E0983B /* TracksStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksStore.swift; sourceTree = "<group>"; };
 		DBF3AD9C28828F64008E249A /* FavoritesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListView.swift; sourceTree = "<group>"; };
 		DBF3AD9E28828FA9008E249A /* FavoritesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +81,6 @@
 		DB9B3C2828812FC700A2D063 /* iTunesMini */ = {
 			isa = PBXGroup;
 			children = (
-				DBB35A4528827EAF00E0983B /* Stores */,
 				DB9B3C4D28815E9200A2D063 /* Views */,
 				DB9B3C4A28815DAE00A2D063 /* View Models */,
 				DB9B3C3F2881302B00A2D063 /* Managers */,
@@ -125,6 +124,7 @@
 				DB9B3C4B28815DBD00A2D063 /* TrackListViewModel.swift */,
 				DB9B3C5028815F6900A2D063 /* TrackViewModel.swift */,
 				DBF3AD9E28828FA9008E249A /* FavoritesListViewModel.swift */,
+				DB6660752883BBCD005DC215 /* RootViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -140,14 +140,6 @@
 				DBF3AD9C28828F64008E249A /* FavoritesListView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		DBB35A4528827EAF00E0983B /* Stores */ = {
-			isa = PBXGroup;
-			children = (
-				DBB35A4628827EBE00E0983B /* TracksStore.swift */,
-			);
-			path = Stores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,10 +229,10 @@
 				DB9B3C612881A66300A2D063 /* FetchedTracksResponse.swift in Sources */,
 				DB9B3C5128815F6900A2D063 /* TrackViewModel.swift in Sources */,
 				DB9B3C552881838A00A2D063 /* TrackDetailView.swift in Sources */,
-				DBB35A4728827EBE00E0983B /* TracksStore.swift in Sources */,
 				DB9B3C652881B60D00A2D063 /* Track.swift in Sources */,
 				DB9B3C4F28815E9C00A2D063 /* SearchTracksListView.swift in Sources */,
 				DB9B3C5B2881915100A2D063 /* RootView.swift in Sources */,
+				DB6660762883BBCD005DC215 /* RootViewModel.swift in Sources */,
 				DB9B3C2A28812FC700A2D063 /* iTunesMiniApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
