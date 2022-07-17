@@ -22,20 +22,10 @@ class TracksDBManager {
         try! realm.write {
             realm.add(tracks)
         }
-    }
+    }    
     
-    func getTracks() -> [Track] {
-        return Array(realm.objects(Track.self))
-    }
-    
-    func getFavorites() -> [Track] {
-        return Array(realm.objects(Track.self).filter({ $0.isFavorite }))
-    }
-    
-    func toggleTrackFavorite(_ track: Track) {
-        try! realm.write {
-            track.toggleIsFavorite()
-        }
+    func favoritesResults() -> Results<Track> {
+        realm.objects(Track.self).where { $0.isFavorite == true }
     }
     
 }

@@ -10,17 +10,27 @@ import RealmSwift
 
 class FavoritesListViewModel: ObservableObject {
     
+    // MARK: - Published properties
     @Published var favorites = [TrackViewModel]()
     
+    // MARK: - Private properties
     fileprivate var token: NotificationToken?
-    fileprivate let realm = try! Realm()
     
-    init() {
-        let results = realm.objects(Track.self).where({ $0.isFavorite == true })
-        favorites = Array(results).map({ TrackViewModel($0) })
+    // MARK: - Object Life Cycle
+    init(dbManager: TracksDBManager = TracksDBManager()) {
+        let results = dbManager.favoritesResults()
         
-        token = results.observe { _ in
-            self.fetchFavorites()
+        token = results.observe { [unowned self] changes in
+            switch changes {
+            case .initial(let results):
+                self.parseResults(results)
+                
+            case .update(let updatedTracks, deletions: _, insertions: _, modifications: _):
+                self.parseResults(updatedTracks)
+                
+            default:
+                break
+            }
         }
     }
     
@@ -28,7 +38,9 @@ class FavoritesListViewModel: ObservableObject {
         token?.invalidate()
     }
     
-    func fetchFavorites() {
-        favorites = Array(realm.objects(Track.self).where({ $0.isFavorite == true })).map({ TrackViewModel($0) })
+    // MARK: - Helper Method
+    fileprivate func parseResults(_ updatedTracks: Results<Track>) {
+        favorites = TrackViewModel.parseTracks(Array(updatedTracks))
     }
+    
 }

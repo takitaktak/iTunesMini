@@ -9,8 +9,9 @@ import SwiftUI
 
 struct FavoritesListView: View {
     
-    @ObservedObject var viewModel = FavoritesListViewModel()
-    private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 15), count: 3)
+    @ObservedObject var viewModel: FavoritesListViewModel
+    
+    fileprivate let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 15), count: 3)
     
     var body: some View {
         NavigationView {
@@ -27,8 +28,6 @@ struct FavoritesListView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Favorites")
-        }.onAppear {
-            viewModel.fetchFavorites()
         }
     }
 }

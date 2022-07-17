@@ -8,6 +8,7 @@
 import Foundation
 
 class TrackViewModel: ObservableObject {
+    
     @Published private(set) var isFavorite = false
     
     var id: String { track.id }
