@@ -18,6 +18,8 @@ class SearchListViewModel: ObservableObject {
     fileprivate let apiManager: TracksAPIManager
     fileprivate let dbManager: TracksDBManager
     
+    fileprivate var token: NotificationToken?
+    
     fileprivate enum ListResult {
         case filtered(String)
         case errorSearch(String)
@@ -55,9 +57,26 @@ class SearchListViewModel: ObservableObject {
             
             switch result {
             case .success(let tracks):
-                self.dbManager.saveTracks(tracks: tracks)
-                self.filteredTracks = TrackViewModel.parseTracks(Array(tracks))
                 self.searchResultMessage = tracks.isEmpty ? ListResult.empty(searchText).message : ListResult.filtered(searchText).message
+                
+                let finalIds = self.dbManager.saveTracks(tracks: tracks)
+                let resultsToObserve = self.dbManager.fetchTracks(withIds: finalIds)
+                
+                if self.token != nil {
+                    self.token?.invalidate()
+                    self.token = nil
+                }
+                
+                self.token = resultsToObserve.observe { changes in
+                    switch changes {
+                    case .initial(let initialResults):
+                        self.filteredTracks = TrackViewModel.parseTracks(Array(initialResults))
+                    case .update(_, deletions: _, insertions: _, modifications: _):
+                        self.filteredTracks = TrackViewModel.parseTracks(Array(resultsToObserve))
+                    default:
+                        break
+                    }
+                }
                 
             case .failure(let error):
                 print("Error fetching api tracks: \(error)")

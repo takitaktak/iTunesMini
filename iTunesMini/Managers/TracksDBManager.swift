@@ -24,19 +24,22 @@ class TracksDBManager {
         }        
     }
     
-    func saveTracks(tracks: [Track]) {
-        tracks.forEach{ saveTrack($0) }
+    func saveTracks(tracks: [Track]) -> [ObjectId] {
+        let finalIds = tracks.map{ saveTrack($0) }
+        return finalIds
     }
     
-    func saveTrack(_ track: Track) {
+    func saveTrack(_ track: Track) -> ObjectId {
         // If track already exists, we don't write it to the database.
-        if let _ = realm.objects(Track.self).firstIndex(where: { $0.isSameAPITrack(as: track) }) {
-            return
+        if let existingTrack = realm.objects(Track.self).first(where: { $0.isSameAPITrack(as: track) }) {
+            return existingTrack._id
         }
         
         try! realm.write {
             realm.add(track)
         }
+        return track._id
+        
     }
     
     func fetchFavorites() -> Results<Track> {
@@ -45,6 +48,10 @@ class TracksDBManager {
     
     func fetchAllTracks() -> Results<Track> {
         realm.objects(Track.self)
+    }
+    
+    func fetchTracks(withIds ids: [ObjectId]) -> Results<Track> {
+        realm.objects(Track.self).filter("_id in %@", ids)
     }
     
 }
