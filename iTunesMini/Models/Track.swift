@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class Track: Object {
-    @Persisted var id: String = UUID().uuidString
+    @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var trackName: String?
     @Persisted var trackPrice: Double = 0.0
     @Persisted var artworkUrl30: String?
@@ -18,6 +18,8 @@ class Track: Object {
     @Persisted var longDescription: String?
     @Persisted var primaryGenreName: String?
     @Persisted var isFavorite: Bool = false
+    
+    var id: String { _id.stringValue }
     
     convenience init(apiTrack: APITrack) {
         self.init()

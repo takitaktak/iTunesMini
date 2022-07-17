@@ -62,7 +62,6 @@ struct TrackDetailView: View {
                     Spacer()
                     
                     Button {
-                        print("Favorite tapped!")
                         track.toggleIsFavorite()
                     } label: {
                         Image(systemName: track.isFavorite ? "heart.fill" : "heart")
