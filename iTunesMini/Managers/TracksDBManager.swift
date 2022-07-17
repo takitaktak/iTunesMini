@@ -9,23 +9,31 @@ import Foundation
 import RealmSwift
 
 class TracksDBManager {
-        
-    let realm = try! Realm()
-    
-    init() {
-        print(Realm.Configuration.defaultConfiguration.fileURL)
-    }
     
     var hasNoTracks: Bool { realm.isEmpty }
+    
+    fileprivate let realm: Realm
+    
+    init(realm: Realm? = nil) {
+        if let realm = realm {
+            self.realm = realm
+        } else {
+            self.realm = try! Realm()
+        }        
+    }
     
     func saveTracks(tracks: [Track]) {
         try! realm.write {
             realm.add(tracks)
         }
-    }    
+    }
     
-    func favoritesResults() -> Results<Track> {
+    func fetchFavorites() -> Results<Track> {
         realm.objects(Track.self).where { $0.isFavorite == true }
+    }
+    
+    func fetchAllTracks() -> Results<Track> {
+        realm.objects(Track.self)
     }
     
 }

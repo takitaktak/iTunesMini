@@ -15,8 +15,10 @@ enum InitializeResult {
 
 class RootViewModel: ObservableObject {
     
+    // MARK: - Published Properties
     @Published var result = InitializeResult.loading
     
+    // MARK: - Private Properties
     fileprivate let apiManager: TracksAPIManager
     fileprivate let dbManager: TracksDBManager
     

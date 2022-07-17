@@ -18,7 +18,7 @@ class FavoritesListViewModel: ObservableObject {
     
     // MARK: - Object Life Cycle
     init(dbManager: TracksDBManager = TracksDBManager()) {
-        let results = dbManager.favoritesResults()
+        let results = dbManager.fetchFavorites()
         
         token = results.observe { [unowned self] changes in
             switch changes {

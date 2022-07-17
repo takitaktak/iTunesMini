@@ -11,6 +11,7 @@ import RealmSwift
 
 class TrackListViewModel: ObservableObject {
     
+    // MARK: - Published Properties
     @Published var filteredTracks = [TrackViewModel]()
     @Published var searchText: String = "" {
         didSet {
@@ -19,37 +20,45 @@ class TrackListViewModel: ObservableObject {
     }
     
     fileprivate var token: NotificationToken?
-    fileprivate let realm = try! Realm()
+    fileprivate let tracksResults: Results<Track>
     
-    init() {
-        let results = realm.objects(Track.self)
-        
-        token = results.observe { _ in
-            self.filterTracks()
+    // MARK: - Object Life Cycle
+    init(dbManager: TracksDBManager = TracksDBManager()) {
+        tracksResults = dbManager.fetchAllTracks()
+        token = tracksResults.observe { changes in
+            switch changes {
+            case .initial(_):
+                self.filterTracks()
+                
+            case .update(_, deletions: _, insertions: _, modifications: _):
+                self.filterTracks()
+                
+            default:
+                break
+            }
         }
-        
-        filteredTracks = Array(results).map { TrackViewModel($0) }
     }
     
     deinit {
         token?.invalidate()
     }
     
-    fileprivate func fetchAllTracks() -> [TrackViewModel] {
-        return Array(realm.objects(Track.self)).map { TrackViewModel($0) }
+    // MARK: - Private Helper Methods
+    fileprivate func fetchAllTracks() {
+        filteredTracks = TrackViewModel.parseTracks(Array(tracksResults))
+    }
+
+    fileprivate func queryTracks() {
+        filteredTracks = TrackViewModel.parseTracks(Array(tracksResults.where{ $0.name.contains(searchText, options: .caseInsensitive) }))
     }
     
-    fileprivate func queryTracks() -> [TrackViewModel] {
-        return Array(realm.objects(Track.self).where{ $0.name.contains(searchText) }).map{ TrackViewModel($0) }
-    }
-    
-    func filterTracks() {
+    fileprivate func filterTracks() {
         if searchText.isEmpty {
-            filteredTracks = fetchAllTracks()
+            fetchAllTracks()
             return
         }
         
-        filteredTracks = queryTracks()
+        queryTracks()
     }
     
 }

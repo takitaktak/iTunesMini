@@ -32,7 +32,7 @@ struct RootView: View {
     
     fileprivate func tabView() -> some View {
         TabView {
-            SearchTracksListView()
+            SearchTracksListView(viewModel: TrackListViewModel())
                 .tabItem {
                     Label("Tracks", systemImage: "music.quarternote.3")
                 }
