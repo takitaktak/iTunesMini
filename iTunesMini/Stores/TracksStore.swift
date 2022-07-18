@@ -101,7 +101,7 @@ extension TracksStore {
         apiManager.searchTracks(searchText: searchText) { result in
             switch result {
             case .success(let tracks):
-                let resultsToObserve = self.dbManager.saveTracks(tracks: tracks)
+                let resultsToObserve = self.dbManager.addTracks(tracks: tracks)
                 self.observeSearches(resultsToObserve)
                 completion(tracks.isEmpty ? .empty : .success)
                 

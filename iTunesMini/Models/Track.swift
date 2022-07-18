@@ -30,6 +30,14 @@ class Track: Object, Codable {
         case genre = "primaryGenreName"
     }
     
+    ///
+    /// A unique key based on the fields consumed from the api.
+    ///
+    ///  The Problem:
+    ///   - the api doesn't give us a unique key for each item.
+    ///   - this then causes duplicate entries within the database.
+    ///   - we create a hash value based on these fields for 'uniqueness'
+    ///
     var fieldsHashValue: Int {
         return (name ?? "").hashValue
         ^ (price ?? 0.0).hashValue
@@ -39,6 +47,9 @@ class Track: Object, Codable {
         ^ (genre ?? "").hashValue
     }
     
+    ///
+    /// A convenience method for comparing fieldsHashValues between Tracks
+    ///
     func isSameAPITrack(as track: Track) -> Bool {
         return fieldsHashValue == track.fieldsHashValue
     }

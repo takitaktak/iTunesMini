@@ -24,12 +24,15 @@ class TracksDBManager {
         }        
     }
     
-    func saveTracks(tracks: [Track]) -> Results<Track> {
-        let finalIds = tracks.map{ saveTrack($0) }
+    func addTracks(tracks: [Track]) -> Results<Track> {
+        let finalIds = tracks.map{ addTrack($0) }
         return fetchTracks(withIds: finalIds)
     }
     
-    func saveTrack(_ track: Track) -> ObjectId {
+    ///
+    /// We check if the track already exists to avoid duplicate entries from search requests
+    ///
+    func addTrack(_ track: Track) -> ObjectId {
         // If track already exists, we don't write it to the database.
         if let existingTrack = realm.objects(Track.self).first(where: { $0.isSameAPITrack(as: track) }) {
             return existingTrack._id
