@@ -24,13 +24,19 @@ class TracksDBManager {
         }        
     }
     
+    ///
+    /// Returns the Results<Track> for the final tracks saved in realm.
+    /// The result is a combination of newly added tracks and existing tracks.
+    ///
     func addTracks(tracks: [Track]) -> Results<Track> {
         let finalIds = tracks.map{ addTrack($0) }
         return fetchTracks(withIds: finalIds)
     }
     
     ///
-    /// We check if the track already exists to avoid duplicate entries from search requests
+    /// We check if the track already exists to avoid duplicate entries from search requests.
+    ///
+    /// Returns the final primary key used to represent the track in Realm.
     ///
     func addTrack(_ track: Track) -> ObjectId {
         // If track already exists, we don't write it to the database.
