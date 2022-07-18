@@ -28,5 +28,6 @@ This app implements the MVVM (Model-View-View-Model) structure that uses a ```St
 - Sort Recent list to based on latest searched/accessed.
 
 ## Dependency
-This app uses [RealmSwift](https://github.com/realm/realm-swift) for Data Persistence.
+- This app uses the Swift Package Manager for managing dependencies
+- This app uses [RealmSwift](https://github.com/realm/realm-swift) for Data Persistence.
 
