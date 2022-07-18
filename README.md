@@ -25,6 +25,7 @@ This app implements the MVVM (Model-View-View-Model) structure that uses a ```St
 ### For Improvement
 - This app may have performance issues from mapping models to individual view models
 - The ```Store``` is prone to 'fatten' if more functionalities are introduced. May be better to have multiple stores or similar structure to separate functionalities (like separating logic for Favorites and Searches methods)
+- Sort Recent list to based on latest searched/accessed.
 
 ## Dependency
 This app uses [RealmSwift](https://github.com/realm/realm-swift) for Data Persistence.
