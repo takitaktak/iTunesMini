@@ -22,10 +22,10 @@ This app implements the MVVM (Model-View-View-Model) structure that uses a ```St
 - May become tedious to maintain due to the number of files.
 - May have 'Massive'/'Fat' View Models if separation is not thought out (i.e. view models doing too much work like formatting data for presentation, and coordinating events between the views and backend). This can also be a problem for ```Stores```.
 
-### Improvements
+### For Improvement
+- This app may have performance issues from mapping models to individual view models
+- The ```Store``` is prone to 'fatten' if more functionalities are introduced. May be better to have multiple stores or similar structure to separate functionalities (like separating logic for Favorites and Searches methods)
 
 ## Dependency
 This app uses [RealmSwift](https://github.com/realm/realm-swift) for Data Persistence.
-
-## Known Issues
 
