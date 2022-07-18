@@ -10,7 +10,7 @@ This app shows a list of items from the iTunes Search API, shows a detail view o
 </p>
 
 ## Architecture
-This app implements the MVVM (Model-View-View-Model) structure.
+This app implements the MVVM (Model-View-View-Model) structure that uses a ```Store``` for abstracting API and database transactions.
 
 ### Roles
 - Model - Represents the data in the app. Uses Realm objects to take advantage of notification changes.
@@ -20,9 +20,12 @@ This app implements the MVVM (Model-View-View-Model) structure.
 
 ### Cons
 - May become tedious to maintain due to the number of files.
-- May have 'Massive'/'Fat' View Models if separation is not thought out (i.e. view models doing too much work like formatting data for presentation, and coordinating events between the views and backend).
+- May have 'Massive'/'Fat' View Models if separation is not thought out (i.e. view models doing too much work like formatting data for presentation, and coordinating events between the views and backend). This can also be a problem for ```Stores```.
 
 ### Improvements
+
 ## Dependency
+This app uses [RealmSwift](https://github.com/realm/realm-swift) for Data Persistence.
+
 ## Known Issues
 
